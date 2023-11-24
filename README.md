@@ -2,9 +2,9 @@
 
 ## Community Health Files
 
-![GitHub last commit (branch)](https://img.shields.io/github/last-commit/The-FireHub-Project/.github/master?style=flat&labelColor=30363d)
-![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/The-FireHub-Project/.github/master?style=flat&labelColor=30363d)
-![GitHub contributors](https://img.shields.io/github/contributors/The-FireHub-Project/.github?style=flat&labelColor=30363d)
+[![GitHub last commit (branch)](https://img.shields.io/github/last-commit/The-FireHub-Project/.github/master?style=flat&labelColor=30363d)](https://github.com/The-FireHub-Project/.github/commits/master/)
+[![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/The-FireHub-Project/.github/master?style=flat&labelColor=30363d)](https://github.com/The-FireHub-Project/.github/commits/master/)
+[![GitHub contributors](https://img.shields.io/github/contributors/The-FireHub-Project/.github?style=flat&labelColor=30363d)](https://github.com/The-FireHub-Project/.github/graphs/contributors)
 
 This repository contains the default community health files for FireHub Project.
 

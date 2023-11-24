@@ -3,7 +3,7 @@
 ## About
 
 [![GitHub Discussions](https://img.shields.io/github/discussions/The-FireHub-Project/Core?style=flat&labelColor=30363d)](https://github.com/orgs/The-FireHub-Project/discussions)
-![Website](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fthe-firehub-project.github.io%2F?style=flat&labelColor=30363d)
+[![Website](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fthe-firehub-project.github.io%2F?style=flat&labelColor=30363d)](https://the-firehub-project.github.io/)
 
 FireHub is a powerful web application framework with elegant syntax.
 
