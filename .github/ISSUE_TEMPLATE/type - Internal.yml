@@ -1,0 +1,20 @@
+name: 🧰 Internal
+description: This is only for internal purposes
+title: "[Internal] : "
+labels: ['type: Development', 'status: Waiting Triage']
+body:
+  - type: dropdown
+    id: platform
+    attributes:
+      label: For which platform you are developing?
+      options:
+        - FireHub Core
+        - FireHub Skeleton
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Description
+      description: A description of internal issue.
+    validations:
+      required: true

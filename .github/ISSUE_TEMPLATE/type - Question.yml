@@ -1,0 +1,28 @@
+name: ☎ Question
+description: Have a Question for us?
+title: "[Question] : "
+labels: ['type: Question', 'status: Waiting Triage']
+body:
+  - type: dropdown
+    id: platform
+    attributes:
+      label: For which platform you have question with?
+      options:
+        - FireHub Core
+        - FireHub Skeleton
+    validations:
+      required: true
+  - type: checkboxes
+    id: exist
+    attributes:
+      label: Have you searched the existing question?
+      description: Please search to see if an question already exists in discussions on [Q&A](https://github.com/orgs/The-FireHub-Project/discussions/categories/q-a/).
+      options:
+        - label: Yes, I have searched the existing question on the discussions on [Q&A](https://github.com/orgs/The-FireHub-Project/discussions/categories/q-a/)
+          required: true
+  - type: textarea
+    attributes:
+      label: Ask your question
+      description: A clear and concise description of your question.
+    validations:
+      required: true

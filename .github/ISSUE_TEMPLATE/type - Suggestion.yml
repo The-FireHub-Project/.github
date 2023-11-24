@@ -1,0 +1,28 @@
+name: ☎ Suggestions
+description: Have a suggestion for us?
+title: "[Suggestion] : "
+labels: ['type: Suggestion', 'status: Waiting Triage']
+body:
+  - type: dropdown
+    id: platform
+    attributes:
+      label: For which platform you have suggestion?
+      options:
+        - FireHub Core
+        - FireHub Skeleton
+    validations:
+      required: true
+  - type: checkboxes
+    id: exist
+    attributes:
+      label: Have you searched the existing suggestion?
+      description: Please search to see if an question already exists in discussions on [Suggestions](https://github.com/orgs/The-FireHub-Project/discussions/categories/suggestions/).
+      options:
+        - label: Yes, I have searched the existing question on the discussions on [Suggestions](https://github.com/orgs/The-FireHub-Project/discussions/categories/suggestions/)
+          required: true
+  - type: textarea
+    attributes:
+      label: Describe your suggestion
+      description: A clear and concise description of your suggestion.
+    validations:
+      required: true

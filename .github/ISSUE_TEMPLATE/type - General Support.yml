@@ -1,0 +1,28 @@
+name: ☎ General Support
+description: General Purpose Support for various things related to us and our products
+title: "[Support] : "
+labels: ['type: Support', 'status: Waiting Triage']
+body:
+  - type: dropdown
+    id: platform
+    attributes:
+      label: For which platform you need support with?
+      options:
+        - FireHub Core
+        - FireHub Skeleton
+    validations:
+      required: true
+  - type: checkboxes
+    id: exist
+    attributes:
+      label: Have you searched the existing question?
+      description: Please search to see if an question already exists in discussions on [Q&A](https://github.com/orgs/The-FireHub-Project/discussions/categories/q-a/).
+      options:
+        - label: Yes, I have searched the existing question on the discussions on [Q&A](https://github.com/orgs/The-FireHub-Project/discussions/categories/q-a/)
+          required: true
+  - type: textarea
+    attributes:
+      label: Describe your inquiry
+      description: A clear and concise description of your inquiry.
+    validations:
+      required: true
