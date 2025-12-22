@@ -27,18 +27,19 @@
 
 ## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Repositories
 
-| Repository                                                                                | Description                                  |
-|-------------------------------------------------------------------------------------------|----------------------------------------------|
-| [core-standard](https://github.com/The-FireHub-Project/core-standard)                     | Open-source PHP core runtime framework       |
-| [core-professional](https://github.com/The-FireHub-Project/core-professional)             | Professional version, adds extended features |
-| [core-enterprise](https://github.com/The-FireHub-Project/core-enterprise)                 | Enterprise version, commercial license       |
-| [firehub-http-adapter](https://github.com/The-FireHub-Project/firehub-http-adapter)       | HTTP adapter implementation                  |
-| [firehub-console-adapter](https://github.com/The-FireHub-Project/firehub-console-adapter) | Console & CLI adapter                        |
-| firehub-*-adapter                                                                         | Other adapters                               |
-| firehub-*-capability                                                                      | Core runtime extensions / capability modules |
-| firehub-*-module                                                                          | Adapter-specific extensions / modules        |
-| [firehub-meta](https://github.com/The-FireHub-Project/firehub-meta)                       | Discussions, issues, and meta management     |
-| [firehub-template](https://github.com/The-FireHub-Project/firehub-template)               | Project starter templates                    |
+| Repository                                                                                            | Description                                  |
+|-------------------------------------------------------------------------------------------------------|----------------------------------------------|
+| [core-standard](https://github.com/The-FireHub-Project/core-standard)                                 | Open-source PHP core runtime framework       |
+| [core-professional](https://github.com/The-FireHub-Project/core-professional)                         | Professional version, adds extended features |
+| [core-enterprise](https://github.com/The-FireHub-Project/core-enterprise)                             | Enterprise version, commercial license       |
+| [firehub-http-adapter](https://github.com/The-FireHub-Project/firehub-http-adapter)                   | HTTP adapter implementation                  |
+| [firehub-console-adapter](https://github.com/The-FireHub-Project/firehub-console-adapter)             | Console & CLI adapter                        |
+| firehub-*-adapter                                                                                     | Other adapters                               |
+| firehub-*-capability                                                                                  | Core runtime extensions / capability modules |
+| firehub-*-module                                                                                      | Adapter-specific extensions / modules        |
+| [firehub-meta](https://github.com/The-FireHub-Project/firehub-meta)                                   | Discussions, issues, and meta management     |
+| [firehub-template](https://github.com/The-FireHub-Project/firehub-template)                           | Project starter templates                    |
+| [the-firehub-project.github.io](https://github.com/The-FireHub-Project/the-firehub-project.github.io) | Official documentation and landing site      |
 
 ## <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Teams & Governance
 
