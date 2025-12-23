@@ -1,5 +1,13 @@
 # Security Policy for The FireHub Project
 
+<p>
+  <a href="https://github.com/search?o=desc&q=org%3AThe-FireHub-Project+type%3Aissue+type%3ASecurity+is%3Aopen&s=created&type=issues">
+    <img
+      src="https://img.shields.io/github/issues-search?query=org%3AThe-FireHub-Project%20type%3Aissue%20type%3ASecurity%20is%3Aopen&style=flat&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyNHB4IiBmaWxsPSIjOTU5ZGE1Ij48cGF0aCBkPSJtNDI0LTI5NiAyODItMjgyLTU2LTU2LTIyNiAyMjYtMTE0LTExNC01NiA1NiAxNzAgMTcwWm01NiAyMTZxLTgzIDAtMTU2LTMxLjVUMTk3LTE5N3EtNTQtNTQtODUuNS0xMjdUODAtNDgwcTAtODMgMzEuNS0xNTZUMTk3LTc2M3E1NC01NCAxMjctODUuNVQ0ODAtODgwcTgzIDAgMTU2IDMxLjVUNzYzLTc2M3E1NCA1NCA4NS41IDEyN1Q4ODAtNDgwcTAgODMtMzEuNSAxNTZUNzYzLTE5N3EtNTQgNTQtMTI3IDg1LjVUNDgwLTgwWm0wLTgwcTEzNCAwIDIyNy05M3Q5My0yMjdxMC0xMzQtOTMtMjI3dC0yMjctOTNxLTEzNCAwLTIyNyA5M3QtOTMgMjI3cTAgMTM0IDkzIDIyN3QyMjcgOTNabTAtMzIwWiIvPjwvc3ZnPg==&logoColor=959da5&label=Security%20issues&labelColor=31373e"
+      alt="Active security issues"
+  /></a>
+</p>
+
 The security of our users is a top priority. This document explains how to responsibly report security vulnerabilities and how we handle them.
 
 This security policy applies to **all FireHub repositories**, including:
@@ -12,13 +20,13 @@ This security policy applies to **all FireHub repositories**, including:
 
 ## Supported Versions
 
-We actively maintain and patch the following FireHub versions:
+FireHub frameworks, adapters, capabilities, and modules follow a clear support lifecycle.  
+Check the detailed supported versions, timelines, and maintenance policy here:
 
-| Version | Status      | Supported Until                    |
-|---------|-------------|------------------------------------|
-| < 1.0   | Active      | Not supported while in development |
+[View Supported Versions](https://github.com/The-FireHub-Project/.github/blob/master/.github/supported-versions.md)
 
-If you are using an unsupported version, we strongly recommend upgrading to the latest supported version.
+> This document includes support for Core Standard, Professional, Enterprise, as well as all adapters, capabilities, and modules.  
+> Keep it handy to ensure your projects run on supported releases.
 
 ## Reporting a Vulnerability
 
