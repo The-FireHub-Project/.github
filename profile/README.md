@@ -13,7 +13,7 @@
 **The FireHub Project** is a modular PHP runtime framework built with **Clean Architecture** and **Domain-Driven Design**, designed to speed up enterprise-grade application development.
 
 <p>
-  <a href="https://github.com/search?o=desc&q=org%3AThe-FireHub-Project+type%3Aissue+&s=created&type=issues">
+  <a href="https://github.com/search?o=desc&q=org%3AThe-FireHub-Project+type%3Aissue+is%3Aopen+&s=created&type=issues">
     <img
       src="https://img.shields.io/github/issues-search?query=org%3AThe-FireHub-Project%20type%3Aissue%20state%3Aopen&style=flat&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyNHB4IiBmaWxsPSIjOTU5ZGE1Ij48cGF0aCBkPSJtNDI0LTI5NiAyODItMjgyLTU2LTU2LTIyNiAyMjYtMTE0LTExNC01NiA1NiAxNzAgMTcwWm01NiAyMTZxLTgzIDAtMTU2LTMxLjVUMTk3LTE5N3EtNTQtNTQtODUuNS0xMjdUODAtNDgwcTAtODMgMzEuNS0xNTZUMTk3LTc2M3E1NC01NCAxMjctODUuNVQ0ODAtODgwcTgzIDAgMTU2IDMxLjVUNzYzLTc2M3E1NCA1NCA4NS41IDEyN1Q4ODAtNDgwcTAgODMtMzEuNSAxNTZUNzYzLTE5N3EtNTQgNTQtMTI3IDg1LjVUNDgwLTgwWm0wLTgwcTEzNCAwIDIyNy05M3Q5My0yMjdxMC0xMzQtOTMtMjI3dC0yMjctOTNxLTEzNCAwLTIyNyA5M3QtOTMgMjI3cTAgMTM0IDkzIDIyN3QyMjcgOTNabTAtMzIwWiIvPjwvc3ZnPg==&logoColor=959da5&label=active%20issues&labelColor=31373e"
       alt="GitHub active issues"
