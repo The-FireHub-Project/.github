@@ -23,7 +23,7 @@ This security policy applies to **all FireHub repositories**, including:
 FireHub frameworks, adapters, capabilities, and modules follow a clear support lifecycle.  
 Check the detailed supported versions, timelines, and maintenance policy here:
 
-[View Supported Versions](https://github.com/The-FireHub-Project/.github/blob/master/.github/supported-versions.md)
+[View Supported Versions](https://github.com/The-FireHub-Project/.github/blob/master/.github/SUPPORTED_VERSIONS.md)
 
 > This document includes support for Core Standard, Professional, Enterprise, as well as all adapters, capabilities, and modules.  
 > Keep it handy to ensure your projects run on supported releases.
