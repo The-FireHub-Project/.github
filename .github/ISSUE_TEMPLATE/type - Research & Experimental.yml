@@ -11,7 +11,7 @@ body:
       label: "Platform:"
       description: Which part of FireHub does this research or experiment relate to?
       options:
-        - Core Standard
+        - Core Foundation
         - Core Professional
         - Core Enterprise
         - HTTP Adapter

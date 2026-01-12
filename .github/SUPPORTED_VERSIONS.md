@@ -20,14 +20,14 @@ This policy is maintained by the FireHub organization and applies to all public 
 
 ## FireHub Core – Support Policy
 
-### <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Core Standard (Community Edition)
+### <img src="https://raw.githubusercontent.com/The-FireHub-Project/the-firehub-project.github.io/master/resources/graphics/icons/firehub.svg" width="15" alt="FireHub Icon"> Core Foundation (Community Edition)
 
 | Version                     | Release    | PHP | Active Support Until              | Security Support Until            |
 |-----------------------------|------------|-----|-----------------------------------|-----------------------------------|
 | :black_large_square: < v1.0 | 2026-01-01 | 8.5 | No support for developer versions | No support for developer versions |
 
 **Details:**
-- Core Standard is **free and open-source**.
+- Core Foundation is **free and open-source**.
 - No guaranteed response time.
 - Security vulnerabilities **may** be patched at the discretion of maintainers.
 - Bug fixes are not guaranteed.

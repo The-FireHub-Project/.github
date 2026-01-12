@@ -29,7 +29,7 @@
 
 | Repository                                                                                            | Description                                  |
 |-------------------------------------------------------------------------------------------------------|----------------------------------------------|
-| [core-standard](https://github.com/The-FireHub-Project/core-standard)                                 | Open-source PHP core runtime framework       |
+| [core-foundation](https://github.com/The-FireHub-Project/core-Foundation)                             | Open-source PHP core runtime framework       |
 | [core-professional](https://github.com/The-FireHub-Project/core-professional)                         | Professional version, adds extended features |
 | [core-enterprise](https://github.com/The-FireHub-Project/core-enterprise)                             | Enterprise version, commercial license       |
 | [firehub-http-adapter](https://github.com/The-FireHub-Project/firehub-http-adapter)                   | HTTP adapter implementation                  |

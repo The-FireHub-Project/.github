@@ -12,7 +12,7 @@ You can also contribute to the documentation by submitting PRs to [the-firehub-p
 
 For code-related issues and debugging, we recommend using GitHub:
 
-- **Issues:** [FireHub Issues](https://github.com/The-FireHub-Project/Core-Standard/issues) – For most bugs and framework issues.
+- **Issues:** [FireHub Issues](https://github.com/The-FireHub-Project/Core-Foundation/issues) – For most bugs and framework issues.
 - **Discussions:** [GitHub Discussions](https://github.com/orgs/The-FireHub-Project/discussions) – For questions, feedback, and suggestions. Feel free to create a new discussion if needed.
 
 ### How to Ask for Help

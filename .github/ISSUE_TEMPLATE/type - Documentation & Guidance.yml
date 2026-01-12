@@ -12,7 +12,7 @@ body:
       label: "Platform:"
       description: Which part of FireHub does this documentation or guidance affect?
       options:
-        - Core Standard
+        - Core Foundation
         - Core Professional
         - Core Enterprise
         - HTTP Adapter

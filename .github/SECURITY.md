@@ -12,7 +12,7 @@ The security of our users is a top priority. This document explains how to respo
 
 This security policy applies to **all FireHub repositories**, including:
 
-- Core framework (Standard, Professional, Enterprise)
+- Core framework (Foundation, Professional, Enterprise)
 - Adapters (HTTP, Console, etc.)
 - Capability modules (firehub-*-capability)
 - Adapter-specific modules (firehub-*-module)
@@ -25,7 +25,7 @@ Check the detailed supported versions, timelines, and maintenance policy here:
 
 [View Supported Versions](https://github.com/The-FireHub-Project/.github/blob/master/.github/SUPPORTED_VERSIONS.md)
 
-> This document includes support for Core Standard, Professional, Enterprise, as well as all adapters, capabilities, and modules.  
+> This document includes support for Core Foundation, Professional, Enterprise, as well as all adapters, capabilities, and modules.  
 > Keep it handy to ensure your projects run on supported releases.
 
 ## Reporting a Vulnerability

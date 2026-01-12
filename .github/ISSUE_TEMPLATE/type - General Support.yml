@@ -12,7 +12,7 @@ body:
       label: "Platform:"
       description: Which part of FireHub is your question about?
       options:
-        - Core Standard
+        - Core Foundation
         - Core Professional
         - Core Enterprise
         - HTTP Adapter

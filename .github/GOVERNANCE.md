@@ -5,7 +5,7 @@ It defines roles, responsibilities, decision-making processes, RFC workflow, and
 
 This governance applies to **all FireHub projects**, including but not limited to:
 
-- Core frameworks (Standard, Professional, Enterprise)
+- Core frameworks (Foundation, Professional, Enterprise)
 - Adapters (HTTP, Console, etc.)
 - Capability modules (`firehub-*-capability`)
 - Adapter-specific modules (`firehub-*-module`)
