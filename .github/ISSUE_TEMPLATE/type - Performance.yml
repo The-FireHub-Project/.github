@@ -1,0 +1,107 @@
+name: 🐞 Performance Issue
+description: Report performance-related issues, bottlenecks, or benchmark results
+title: "[Performance]: "
+type: Performance
+labels: ["status: Waiting Triage"]
+
+body:
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: "Platform:"
+      description: Which part of FireHub does this performance issue relate to?
+      options:
+        - Core Standard
+        - Core Professional
+        - Core Enterprise
+        - HTTP Adapter
+        - Console Adapter
+        - Capability Module
+        - Adapter Module
+        - ...other platform
+    validations:
+      required: true
+
+  - type: input
+    id: platform-version
+    attributes:
+      label: "Platform version:"
+      description: Version relevant to this performance issue
+      placeholder: "example: v4.3.24"
+    validations:
+      required: false
+
+  - type: input
+    id: php-version
+    attributes:
+      label: "PHP version:"
+      description: PHP version in your environment
+      placeholder: "example: 8.3.1"
+    validations:
+      required: true
+
+  - type: textarea
+    id: scenario
+    attributes:
+      label: Scenario / Test Case
+      description: Describe the scenario where the performance issue occurs
+      placeholder: |
+        - Type of request / process
+        - Number of users / load
+        - Input data size
+    validations:
+      required: true
+
+  - type: textarea
+    id: observed-performance
+    attributes:
+      label: Observed Performance
+      description: Actual performance results, metrics, or measurements observed
+      placeholder: |
+        - Execution time
+        - Memory usage
+        - CPU load
+        - Response times
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-performance
+    attributes:
+      label: Expected Performance
+      description: What would be acceptable performance or target metrics?
+      placeholder: |
+        - Execution time < 100ms
+        - Memory usage < 50MB
+        - CPU load < 80%
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps To Reproduce
+      description: Steps or setup to reproduce the performance issue
+      placeholder: |
+        1. Setup environment
+        2. Run benchmark / request
+        3. Measure results
+    validations:
+      required: false
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References / Links
+      description: Any related issues, PRs, benchmarks, or discussions
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information (logs, graphs, screenshots)
+    validations:
+      required: false

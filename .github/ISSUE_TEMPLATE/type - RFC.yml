@@ -1,0 +1,90 @@
+name: ♨️ Development RFC
+description: Submit a Request for Comments (RFC) on technical changes, architecture, or experimental implementations
+title: "[RFC]: "
+type: RFC
+labels: ["status: Waiting Triage"]
+
+body:
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: "Platform:"
+      description: Which part of FireHub does this RFC relate to?
+      options:
+        - Core Standard
+        - Core Professional
+        - Core Enterprise
+        - HTTP Adapter
+        - Console Adapter
+        - Capability Module
+        - Adapter Module
+        - ...other platform
+    validations:
+      required: true
+
+  - type: input
+    id: platform-version
+    attributes:
+      label: "Platform version (if applicable):"
+      description: Version relevant to this RFC
+      placeholder: "example: v4.3.24"
+    validations:
+      required: false
+
+  - type: textarea
+    id: problem-statement
+    attributes:
+      label: Problem Statement
+      description: Clearly describe the technical problem or limitation that this RFC addresses
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the proposed technical solution or implementation
+      placeholder: |
+        - Architectural changes
+        - API design or contracts
+        - Refactoring plans
+        - Experimental implementation
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: List any alternative approaches and explain why the proposed solution is preferred
+    validations:
+      required: false
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Expected Impact
+      description: How significant will this change be?
+      options:
+        - Low (minor internal change, backward compatible)
+        - Medium (noticeable change, may require minor refactoring)
+        - High (major architectural change, breaking or high-risk)
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References / Links
+      description: Include links to discussions, RFCs, PRs, benchmarks, or diagrams
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other context that will help reviewers understand this RFC
+    validations:
+      required: false

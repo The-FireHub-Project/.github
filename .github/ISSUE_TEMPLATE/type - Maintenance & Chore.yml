@@ -1,0 +1,73 @@
+name: 🧰 Maintenance / Chores
+description: Internal maintenance tasks, chores, and non-functional updates
+title: "[Maintenance]: "
+type: Maintenance
+labels: ["status: Waiting Triage"]
+
+body:
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: "Platform:"
+      description: Which part of FireHub does this maintenance task affect?
+      options:
+        - Core Standard
+        - Core Professional
+        - Core Enterprise
+        - HTTP Adapter
+        - Console Adapter
+        - Capability Module
+        - Adapter Module
+        - ...other platform
+    validations:
+      required: true
+
+  - type: dropdown
+    id: maintenance-type
+    attributes:
+      label: Maintenance Type
+      description: Select the nature of this maintenance or chore
+      options:
+        - Chore / Cleanup
+        - Dependency Update
+        - CI / Tooling
+        - Documentation
+        - Code Style / Lint
+        - Infrastructure
+        - ...other
+    validations:
+      required: true
+
+  - type: textarea
+    id: task-summary
+    attributes:
+      label: Task Summary
+      description: Briefly describe the maintenance or chore task
+    validations:
+      required: true
+
+  - type: textarea
+    id: task-details
+    attributes:
+      label: Task Details
+      description: Provide implementation details or scope of the task
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: breaking-change
+    attributes:
+      label: Breaking Change
+      description: Does this maintenance introduce any breaking changes?
+      options:
+        - label: No, this change is not breaking
+          required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References / Links
+      description: Related issues, PRs, documentation, or tooling references
+    validations:
+      required: false

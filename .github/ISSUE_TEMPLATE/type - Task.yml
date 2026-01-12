@@ -1,0 +1,88 @@
+name: 🪛 Task
+description: Internal development and operational tasks for the FireHub core team
+title: "[Task]: "
+type: Task
+labels: ["status: Waiting Triage"]
+
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **Internal use only**
+        This issue type is intended for FireHub maintainers and core contributors.
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: "Platform:"
+      description: Which part of FireHub does this task affect?
+      options:
+        - Core Standard
+        - Core Professional
+        - Core Enterprise
+        - HTTP Adapter
+        - Console Adapter
+        - Capability Module
+        - Adapter Module
+        - ...other platform
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Task Summary
+      description: Briefly describe the internal task.
+      placeholder: Clear and concise description of the task.
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context / Background
+      description: Why is this task needed? What prompted it?
+    validations:
+      required: false
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope of Work
+      description: Define what is included and excluded.
+      placeholder: |
+        In scope:
+        - ...
+
+        Out of scope:
+        - ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: Conditions that must be met for completion.
+      placeholder: |
+        - [ ] Criteria 1
+        - [ ] Criteria 2
+    validations:
+      required: false
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies / Blockers
+      description: Related issues, PRs, or external dependencies.
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Internal Notes
+      description: Any additional internal-only notes or considerations.
+    validations:
+      required: false

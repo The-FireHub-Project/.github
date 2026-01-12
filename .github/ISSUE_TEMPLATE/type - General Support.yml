@@ -1,0 +1,78 @@
+name: 🆘 Support Request
+description: Request guidance, clarification, or help with FireHub Core, Adapters, or Modules
+title: "[Support]: "
+type: Support
+labels: ["status: Waiting Triage"]
+
+body:
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: "Platform:"
+      description: Which part of FireHub is your question about?
+      options:
+        - Core Standard
+        - Core Professional
+        - Core Enterprise
+        - HTTP Adapter
+        - Console Adapter
+        - Capability Module
+        - Adapter Module
+        - ...other platform
+    validations:
+      required: true
+
+  - type: input
+    id: platform-version
+    attributes:
+      label: "Platform version (if applicable):"
+      description: Current version relevant to your question
+      placeholder: "example: v4.3.24"
+    validations:
+      required: false
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Question / Issue
+      description: Describe your question or problem in detail
+      placeholder: |
+        Explain what you are trying to do, where you are stuck, and any relevant context
+    validations:
+      required: true
+
+  - type: textarea
+    id: attempted-solutions
+    attributes:
+      label: Steps / Attempts
+      description: Describe what you have already tried or researched
+      placeholder: |
+        1. Step one
+        2. Step two
+        3. ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Any relevant environment details
+      value: |
+        - OS:
+        - Web Server / CLI:
+        - Browser (if applicable):
+      render: markdown
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: |
+        Links, logs, screenshots, or references that will help others provide guidance.
+        Attach images or files by dragging them into this area.
+    validations:
+      required: false

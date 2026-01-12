@@ -1,0 +1,95 @@
+name: 💢 Enhancement Request
+description: Propose an improvement, optimization, or refactoring for FireHub
+title: "[Enhancement]: "
+type: Enhancement
+labels: ["status: Waiting Triage"]
+
+body:
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: "Platform:"
+      description: Which part of FireHub is affected?
+      options:
+        - Core Standard
+        - Core Professional
+        - Core Enterprise
+        - HTTP Adapter
+        - Console Adapter
+        - Capability Module
+        - Adapter Module
+        - ...other platform
+    validations:
+      required: true
+
+  - type: input
+    id: platform-version
+    attributes:
+      label: "Platform version:"
+      description: Current version where this enhancement applies
+      placeholder: "example: v4.3.x"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-statement
+    attributes:
+      label: Problem / Motivation
+      description: |
+        What problem does this enhancement solve?
+        Why is the current behavior or implementation insufficient?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: |
+        Describe the enhancement you propose.
+        Include architectural ideas, API changes, or refactoring concepts if relevant.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: |
+        Describe any alternative solutions or approaches you have considered.
+        Why is the proposed solution preferable?
+    validations:
+      required: false
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact Level
+      description: How significant is this enhancement?
+      options:
+        - Low (minor improvement, no breaking changes)
+        - Medium (noticeable improvement, possible internal changes)
+        - High (significant change, architectural or breaking)
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: compatibility
+    attributes:
+      label: Compatibility Considerations
+      description: Please confirm potential compatibility implications.
+      options:
+        - label: This enhancement is backward compatible
+        - label: This enhancement may introduce breaking changes
+        - label: This enhancement affects public APIs or contracts
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: |
+        Links to discussions, RFCs, benchmarks, diagrams, or code references.
+        Any additional context that helps evaluate the proposal.
+    validations:
+      required: false

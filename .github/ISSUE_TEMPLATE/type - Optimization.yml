@@ -1,0 +1,81 @@
+name: 💢 Optimization Request
+description: Request code optimization, performance improvements, or refactoring
+title: "[Optimization]: "
+type: Optimization
+labels: ["status: Waiting Triage"]
+
+body:
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: "Platform:"
+      description: Which part of FireHub does this optimization relate to?
+      options:
+        - Core Standard
+        - Core Professional
+        - Core Enterprise
+        - HTTP Adapter
+        - Console Adapter
+        - Capability Module
+        - Adapter Module
+        - ...other platform
+    validations:
+      required: true
+
+  - type: input
+    id: platform-version
+    attributes:
+      label: "Platform version:"
+      description: Version relevant to this optimization request
+      placeholder: "example: v4.3.24"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-implementation
+    attributes:
+      label: Current Implementation
+      description: Describe the current code, algorithm, or workflow that needs optimization
+    validations:
+      required: true
+
+  - type: textarea
+    id: optimization-goal
+    attributes:
+      label: Optimization Goal
+      description: What do you want to achieve? (e.g., performance, readability, maintainability)
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-approach
+    attributes:
+      label: Proposed Approach
+      description: How would you suggest optimizing or refactoring this part of the system?
+    validations:
+      required: false
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Expected Impact
+      description: Describe the expected benefits after optimization (speed, memory, readability)
+    validations:
+      required: false
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References / Links
+      description: Include related issues, PRs, benchmarks, or discussions
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information to help reviewers understand and implement the optimization
+    validations:
+      required: false

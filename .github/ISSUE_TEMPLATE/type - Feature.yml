@@ -1,0 +1,100 @@
+name: 💢 Feature Request
+description: Suggest a new feature, module, or improvement for FireHub
+title: "[Feature]: "
+type: Feature
+labels: ["status: Waiting Triage"]
+
+body:
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      description: Which part of FireHub would this feature affect?
+      options:
+        - Core Standard
+        - Core Professional
+        - Core Enterprise
+        - HTTP Adapter
+        - Console Adapter
+        - Capability Module
+        - Adapter Module
+        - ...other platform
+    validations:
+      required: true
+
+  - type: input
+    id: platform-version
+    attributes:
+      label: "Platform version (if applicable):"
+      description: Current version where this feature applies
+      placeholder: "example: v4.3.x"
+    validations:
+      required: false
+
+  - type: textarea
+    id: user-story
+    attributes:
+      label: User Story / Motivation
+      description: |
+        Describe the feature from the perspective of the user or system.
+        What problem does it solve or what value does it provide?
+      placeholder: |
+        As a <role>, I want <feature> so that <benefit>.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: |
+        Define the expected outcomes or conditions that must be met
+        for the feature to be considered complete.
+      placeholder: |
+        1. <criterion one>
+        2. <criterion two>
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: |
+        Are there alternative approaches or existing features that could solve this?
+        Why is this proposed feature preferred?
+    validations:
+      required: false
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact Level
+      description: How significant is this feature?
+      options:
+        - Low (minor addition, no breaking changes)
+        - Medium (useful enhancement, may require internal refactoring)
+        - High (major addition, architectural or breaking impact)
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: compatibility
+    attributes:
+      label: Compatibility Considerations
+      description: Please confirm potential compatibility implications.
+      options:
+        - label: This feature is backward compatible
+        - label: This feature may introduce breaking changes
+        - label: This feature affects public APIs or contracts
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: |
+        Any links, diagrams, benchmarks, or references to support the feature proposal.
+        Screenshots, mocks, or RFC links are welcome.
+    validations:
+      required: false

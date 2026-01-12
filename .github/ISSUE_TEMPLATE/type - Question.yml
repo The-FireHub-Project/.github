@@ -1,0 +1,69 @@
+name: ❓ Question
+description: Ask a question or seek guidance about FireHub projects
+title: "[Question]: "
+type: Question
+labels: ["status: Waiting Triage"]
+
+body:
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: "Platform:"
+      description: Which part of FireHub is your question about?
+      options:
+        - Core Standard
+        - Core Professional
+        - Core Enterprise
+        - HTTP Adapter
+        - Console Adapter
+        - Capability Module
+        - Adapter Module
+        - ...other platform
+    validations:
+      required: true
+
+  - type: input
+    id: platform-version
+    attributes:
+      label: "Platform version (if applicable):"
+      description: Version relevant to your question
+      placeholder: "example: v4.3.24"
+    validations:
+      required: false
+
+  - type: textarea
+    id: question-summary
+    attributes:
+      label: Question Summary
+      description: Provide a short summary of your question
+    validations:
+      required: true
+
+  - type: textarea
+    id: question-details
+    attributes:
+      label: Question Details
+      description: Provide detailed information, context, or code examples related to your question
+      placeholder: |
+        - Steps you tried
+        - Observed behavior
+        - Relevant code snippets or configs
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References / Links
+      description: Include any relevant documentation, discussions, or PRs
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other information to help the community answer your question
+    validations:
+      required: false

@@ -1,0 +1,100 @@
+name: 🧰 Deprecation
+description: Track deprecated APIs, components, or behaviors with planned removal
+title: "[Deprecation]: "
+type: Deprecation
+labels: ["status: Draft"]
+
+body:
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: "Platform:"
+      description: Which part of FireHub is being deprecated?
+      options:
+        - Core Standard
+        - Core Professional
+        - Core Enterprise
+        - HTTP Adapter
+        - Console Adapter
+        - Capability Module
+        - Adapter Module
+        - ...other platform
+    validations:
+      required: true
+
+  - type: input
+    id: affected-component
+    attributes:
+      label: Affected Component
+      description: Class, interface, method, config key, or module being deprecated
+      placeholder: "example: Application\\Contracts\\CreateEntityInterface"
+    validations:
+      required: true
+
+  - type: input
+    id: deprecated-since
+    attributes:
+      label: Deprecated Since Version
+      description: Version where this deprecation is introduced
+      placeholder: "example: v4.4.0"
+    validations:
+      required: true
+
+  - type: input
+    id: removal-version
+    attributes:
+      label: Planned Removal Version
+      description: Target version for removal (major/minor)
+      placeholder: "example: v5.0.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason for Deprecation
+      description: Explain why this component is being deprecated
+    validations:
+      required: true
+
+  - type: textarea
+    id: replacement
+    attributes:
+      label: Replacement / Migration Path
+      description: Describe the recommended alternative or migration strategy
+    validations:
+      required: true
+
+  - type: dropdown
+    id: bc-impact
+    attributes:
+      label: Backward Compatibility Impact
+      description: Does this deprecation affect backward compatibility?
+      options:
+        - No immediate BC impact
+        - Soft deprecation (warnings only)
+        - Hard deprecation (will break on removal)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: communication
+    attributes:
+      label: Communication Checklist
+      description: Ensure deprecation is properly communicated
+      options:
+        - README / Docs updated
+        - Changelog entry added
+        - Upgrade guide updated
+        - Announcement planned
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any extra notes, references, or discussion links
+    validations:
+      required: false

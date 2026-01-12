@@ -1,0 +1,103 @@
+name: 💥 Research / Experimental
+description: Research, experimental work, or exploratory tasks including Debug, Testing, Spike, Experiment, or Integration
+title: "[Research]: "
+labels: ["status: Draft"]
+
+body:
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: "Platform:"
+      description: Which part of FireHub does this research or experiment relate to?
+      options:
+        - Core Standard
+        - Core Professional
+        - Core Enterprise
+        - HTTP Adapter
+        - Console Adapter
+        - Capability Module
+        - Adapter Module
+        - ...other platform
+    validations:
+      required: true
+
+  - type: input
+    id: platform-version
+    attributes:
+      label: "Platform version:"
+      description: Version relevant to this research/experiment
+      placeholder: "example: v4.3.24"
+    validations:
+      required: false
+
+  - type: input
+    id: php-version
+    attributes:
+      label: "PHP version:"
+      description: PHP version in your environment
+      placeholder: "example: 8.5.0"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: research-type
+    attributes:
+      label: Type of Research / Experiment
+      description: Select the purpose or nature of this research/experiment
+      options:
+        - Debug
+        - Testing
+        - Spike
+        - Experiment
+        - Integration
+    validations:
+      required: true
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: Describe the goal or objective of this research/experiment
+    validations:
+      required: true
+
+  - type: textarea
+    id: approach
+    attributes:
+      label: Approach / Method
+      description: Describe the steps, methodology, or setup for this research
+    validations:
+      required: false
+
+  - type: textarea
+    id: observations
+    attributes:
+      label: Observations / Results
+      description: Record any findings, logs, benchmarks, or unexpected behavior observed
+    validations:
+      required: false
+
+  - type: textarea
+    id: next-steps
+    attributes:
+      label: Next Steps
+      description: Outline potential follow-up actions, experiments, or decisions based on this research
+    validations:
+      required: false
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References / Links
+      description: Include related issues, discussions, PRs, or documentation
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other information useful for reviewers or collaborators
+    validations:
+      required: false

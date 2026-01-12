@@ -1,0 +1,100 @@
+name: ❗ Incident Report
+description: Report operational incidents, downtime, or unexpected behavior affecting FireHub projects
+title: "[Incident]: "
+type: Incident
+labels: ["type: Incident", "status: Waiting Triage"]
+
+body:
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: "Platform:"
+      description: Which part of FireHub is affected by this incident?
+      options:
+        - Core Standard
+        - Core Professional
+        - Core Enterprise
+        - HTTP Adapter
+        - Console Adapter
+        - Capability Module
+        - Adapter Module
+        - ...other platform
+    validations:
+      required: true
+
+  - type: input
+    id: platform-version
+    attributes:
+      label: "Platform version:"
+      description: Current version relevant to this incident
+      placeholder: "example: v4.3.24"
+    validations:
+      required: true
+
+  - type: input
+    id: php-version
+    attributes:
+      label: "PHP version:"
+      description: PHP version in environment
+      placeholder: "example: 8.5.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: incident-summary
+    attributes:
+      label: Incident Summary
+      description: Brief summary of the incident or issue
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: Describe the impact of the incident (users, systems, services)
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps / Observed Behavior
+      description: Steps to observe or reproduce the incident
+      placeholder: |
+        1. Step one
+        2. Step two
+        3. Observed behavior...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity Level
+      description: How severe is this incident?
+      options:
+        - Low (minor impact, workaround available)
+        - Medium (noticeable impact, partial disruption)
+        - High (major impact, production outage, critical systems affected)
+    validations:
+      required: true
+
+  - type: textarea
+    id: mitigation
+    attributes:
+      label: Mitigation / Temporary Fix
+      description: Any temporary steps taken to mitigate the incident
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: |
+        Logs, screenshots, stack traces, incident tickets, or any other relevant information.
+        Attach files by dragging them into this area.
+    validations:
+      required: false

@@ -1,0 +1,108 @@
+name: 📑 Documentation / Guidance
+description: Documentation updates, improvements, clarifications, or developer guidance
+title: "[Docs]: "
+type: Documentation
+labels: ["status: Waiting Triage"]
+
+body:
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: "Platform:"
+      description: Which part of FireHub does this documentation or guidance affect?
+      options:
+        - Core Standard
+        - Core Professional
+        - Core Enterprise
+        - HTTP Adapter
+        - Console Adapter
+        - Capability Module
+        - Adapter Module
+        - ...other platform
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        Use this issue type for documentation-related work only.
+        This includes missing docs, corrections, clarifications, guides, and developer-facing explanations.
+
+  - type: dropdown
+    id: doc-scope
+    attributes:
+      label: Documentation Area
+      description: Which documentation area is affected?
+      options:
+        - README / Overview
+        - Getting Started
+        - Installation
+        - Configuration
+        - API Reference
+        - Architecture / Design
+        - Guides / Tutorials
+        - Examples / Samples
+        - Contribution / Governance
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Affected File or URL
+      description: Link to the documentation file, page, or section (if known).
+      placeholder: "e.g. README.md, docs/architecture.md, https://..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Issue Description
+      description: What is missing, unclear, outdated, or incorrect?
+      placeholder: Describe the documentation issue clearly.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed Change
+      description: What should be added, updated, or clarified?
+      placeholder: |
+        Suggested improvements:
+        - ...
+        - ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: audience
+    attributes:
+      label: Target Audience
+      description: Who is this documentation for?
+      placeholder: |
+        - End users
+        - Contributors
+        - Maintainers
+        - Integrators
+    validations:
+      required: false
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References / Examples
+      description: Links, examples, specs, or external references.
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: Any extra context or considerations.
+    validations:
+      required: false

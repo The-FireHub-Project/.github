@@ -1,0 +1,81 @@
+name: 💢 Refactor Request
+description: Request code refactoring, architectural changes, or cleanup
+title: "[Refactor]: "
+type: Refactor
+labels: ["status: Waiting Triage"]
+
+body:
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: "Platform:"
+      description: Which part of FireHub does this refactor concern?
+      options:
+        - Core Standard
+        - Core Professional
+        - Core Enterprise
+        - HTTP Adapter
+        - Console Adapter
+        - Capability Module
+        - Adapter Module
+        - ...other platform
+    validations:
+      required: true
+
+  - type: input
+    id: platform-version
+    attributes:
+      label: "Platform version:"
+      description: Version relevant to this refactor request
+      placeholder: "example: v4.3.24"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-implementation
+    attributes:
+      label: Current Implementation
+      description: Describe the current code, module, or architecture before refactoring
+    validations:
+      required: true
+
+  - type: textarea
+    id: refactor-goal
+    attributes:
+      label: Refactor Goal
+      description: What do you want to achieve? (e.g., maintainability, readability, modularity)
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-approach
+    attributes:
+      label: Proposed Approach
+      description: How do you suggest refactoring the code or architecture?
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected-impact
+    attributes:
+      label: Expected Impact
+      description: Describe the benefits after refactoring (better maintainability, reduced technical debt, easier testing)
+    validations:
+      required: false
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References / Links
+      description: Any related issues, PRs, discussions, or documentation
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information to help reviewers understand and approve the refactor
+    validations:
+      required: false

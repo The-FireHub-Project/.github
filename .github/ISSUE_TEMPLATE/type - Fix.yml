@@ -1,0 +1,88 @@
+name: 🪛️ Fix
+description: Report a fix, patch, or hotfix for Core, Adapters, or Modules
+title: "[Fix]: "
+type: Fix
+labels: ["status: Waiting Triage"]
+
+body:
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: "Platform:"
+      description: Which part of FireHub is affected by this fix?
+      options:
+        - Core Standard
+        - Core Professional
+        - Core Enterprise
+        - HTTP Adapter
+        - Console Adapter
+        - Capability Module
+        - Adapter Module
+        - ...other platform
+    validations:
+      required: true
+
+  - type: input
+    id: platform-version
+    attributes:
+      label: "Platform version:"
+      description: Version where the issue exists or where the fix applies
+      placeholder: "example: v4.3.24"
+    validations:
+      required: true
+
+  - type: input
+    id: php-version
+    attributes:
+      label: "PHP version:"
+      description: PHP version used in the environment
+      placeholder: "example: 8.5.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue-reference
+    attributes:
+      label: Reference Issue / PR
+      description: Link to the original issue or pull request being fixed
+      placeholder: "example: #123 or https://github.com/.../issues/123"
+    validations:
+      required: false
+
+  - type: textarea
+    id: problem-summary
+    attributes:
+      label: Problem Summary
+      description: Briefly summarize the issue that is being fixed
+    validations:
+      required: true
+
+  - type: textarea
+    id: fix-description
+    attributes:
+      label: Fix Description
+      description: Explain what the fix does and how it solves the problem
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-verify
+    attributes:
+      label: Steps to Verify
+      description: Steps to test that the fix works as intended
+      placeholder: |
+        1. In this environment...
+        2. With this configuration...
+        3. Run '...'
+        4. Confirm the fix is applied
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any logs, screenshots, stack traces, or references that help review the fix
+    validations:
+      required: false
