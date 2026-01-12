@@ -17,11 +17,11 @@
 ### Testing
 - [ ] Manual verification performed
 - [ ] Issue replication verified
-- [ ] All affected components checked
+- [ ] All affected components are checked
 
 ### Documentation
 - [ ] Documentation updated if behavior changed
-- [ ] Examples or screenshots added (if applicable)
+- [ ] Examples or screenshots are added (if applicable)
 
 ### Checklist
 - [ ] Linked related issue(s)
@@ -30,7 +30,7 @@
 - [ ] PR is ready for review by the team
 
 ### Risks / Impact
-- Minor service disruption possible during testing
+- Minor service disruption is possible during testing
 - Any areas that require special attention by support/QA
 
 ### Notes

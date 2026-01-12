@@ -17,7 +17,7 @@
 - Migration or backward compatibility notes (if applicable)
 
 ### Testing
-- [ ] Manual steps to reproduce verified issue
+- [ ] Manual steps to reproduce a verified issue
 - [ ] Unit / Integration tests added
 - [ ] Tests passing locally
 - [ ] Test coverage updated

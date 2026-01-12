@@ -11,7 +11,7 @@
 
 ### Implementation Details
 - Sections added, updated, or removed
-- Links, examples, or diagrams included
+- Links, examples, or diagrams are included
 - Any dependency or reference updates
 
 ### Testing
@@ -26,7 +26,7 @@
 
 ### Checklist
 - [ ] Linked related issue(s)
-- [ ] Documentation clear and accurate
+- [ ] Documentation is clear and accurate
 - [ ] PR ready for review
 
 ### Risks / Impact

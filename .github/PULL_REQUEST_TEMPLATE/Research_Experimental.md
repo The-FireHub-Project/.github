@@ -21,8 +21,8 @@
 
 ### Documentation
 - [ ] Findings documented
-- [ ] Screenshots, tables, or charts included
-- [ ] Any relevant references added
+- [ ] Screenshots, tables, or charts are included
+- [ ] Any relevant references are added
 
 ### Checklist
 - [ ] Linked related issue(s)
@@ -31,7 +31,7 @@
 - [ ] PR ready for review
 
 ### Risks / Impact
-- Potential risks if experiment affects main branch
+- Potential risks if the experiment affects the main branch
 - Temporary code or partial implementation warnings
 
 ### Notes
