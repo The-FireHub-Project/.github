@@ -1,0 +1,27 @@
+name: Add to project
+
+on:
+  workflow_call:
+    inputs:
+      projectNumber:
+        required: false
+        type: number
+        default: 2
+      labeled:
+        required: false
+        type: string
+        default: "status: Waiting Triage"
+    secrets:
+      GH_TOKEN:
+        required: true
+
+jobs:
+  add-to-project:
+    name: Add issue to triage
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v1.0.2
+        with:
+          project-url: https://github.com/orgs/The-FireHub-Project/projects/${{ inputs.projectNumber }}
+          github-token: ${{ secrets.GH_TOKEN }}
+          labeled: ${{ inputs.labeled }}
