@@ -1,5 +1,29 @@
 ## 💥 Research / Experimental Pull Request
 
+<!--
+PR TITLE FORMAT (REQUIRED):
+
+<type>(<scope>): <short imperative summary>
+
+Allowed types:
+- security
+- fix
+- perf
+- feat
+- refactor
+- docs
+- chore
+- ci
+- composer
+
+Allowed scopes:
+application | domain | infrastructure | kernel | shared | support | tests | deps | other
+
+PR semantic MUST represent the DOMINANT change.
+Priority order:
+security > fix > perf > feat > refactor > docs > chore > ci > composer
+-->
+
 ### Related Issue
 - Please link the issue(s) this PR addresses:
   Closes #<issue_number>

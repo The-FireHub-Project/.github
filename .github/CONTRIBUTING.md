@@ -13,6 +13,7 @@ All types of contributions are encouraged and valued. This guide will help you n
 
 - [Questions](#questions)
 - [Contributing Code or Documentation](#contributing-code-or-documentation)
+- [Pull Request Guidelines](#pull-request-guidelines)
 - [Reporting Bugs](#reporting-bugs)
 - [Reporting Incidents](#reporting-incidents)
 - [Suggesting Enhancements or Ideas](#suggesting-enhancements-or-ideas)
@@ -41,6 +42,65 @@ We will respond as quickly as possible.
 2. Write clear, concise commit messages.
 3. Follow FireHub coding standards (PSR-12 for PHP, Markdown for docs).
 4. Submit a pull request with a clear description and link to related issues or discussions.
+
+## Pull Request Guidelines
+
+### Pull Request Semantics
+
+All Pull Requests MUST follow the semantic title format:
+
+`<type>(<scope>): <summary>`
+
+Example:
+fix(domain): handle missing AAV configuration
+
+### Allowed Types
+
+security – Security fixes and hardening  
+fix – Bug fixes and incident resolutions  
+perf – Performance improvements  
+feat – New features or enhancements  
+refactor – Internal refactoring without behavior change  
+docs – Documentation and guidance  
+chore – Maintenance, tooling, research, support work  
+ci – CI/CD pipeline changes  
+composer – Dependency and Composer-related changes
+
+### Allowed Scopes
+
+application, domain, infrastructure, kernel, shared, support, tests, deps, other
+
+### Dominant Semantic Rule
+
+If a Pull Request addresses multiple issue types, the PR title MUST use the
+highest-priority semantic according to the following order:
+
+security  
+fix  
+perf  
+feat  
+refactor  
+docs  
+chore  
+ci  
+composer
+
+Example:
+- Bug fix + documentation → `fix`
+- Feature + refactor → `feat`
+- Support + docs → `chore`
+
+### Issue Linking
+
+Every PR MUST reference related issues using:
+
+`Closes #<issue-id>` or `Fixes #<issue-id>` or `Resolves #<issue-id>`  – when fully resolved  
+`Refs #<issue-id>` or `See #<issue-id>` or `Part of #<issue-id>` – when partially related
+
+Issue types describe context.  
+PR semantics describe the actual code change.
+
+They are intentionally different.
 
 ## Reporting Bugs
 
@@ -81,7 +141,7 @@ Report unusual software behavior to the [Incident](https://github.com/orgs/The-F
 
 - Use a **descriptive title**
 - Provide **step-by-step details**
-- Explain the **current behavior vs expected behavior**
+- Explain the **current behavior vs. expected behavior**
 - Include **alternatives attempted**
 
 ## Reporting Incidents
@@ -90,7 +150,7 @@ Report unusual software behavior to the [Incident](https://github.com/orgs/The-F
 
 - Use a **descriptive title**
 - Provide **step-by-step details**
-- Explain the **current behavior vs expected behavior**
+- Explain the **current behavior vs. expected behavior**
 - Include **alternatives attempted**
 
 ---
@@ -102,7 +162,7 @@ Use [Suggestions](https://github.com/orgs/The-FireHub-Project/discussions/catego
 ### Guidelines
 
 - Ensure you’re on the **latest version**
-- Check **documentation** and search existing suggestions
+- Check **documentation** and search for existing suggestions
 - Make a strong case for how it **benefits most FireHub users**
 - Reference other projects if relevant
 
