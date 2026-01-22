@@ -25,6 +25,7 @@ body:
         - Console Adapter
         - Capability Module
         - Adapter Module
+        - Skeleton
         - ...other platform
     validations:
       required: true
