@@ -21,8 +21,8 @@ body:
         - Core Foundation
         - Core Professional
         - Core Enterprise
-        - HTTP Adapter
-        - Console Adapter
+        - UI Adapter
+        - Infrastructure Adapter
         - Capability Module
         - Adapter Module
         - Skeleton
