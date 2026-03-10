@@ -44,6 +44,7 @@ jobs:
           php-version: ${{ matrix.php-versions }}
           extensions: ${{ inputs.phpExtensions }}
           tools: ${{ inputs.tools }}
+          coverage: xdebug
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: Install composer dependencies
