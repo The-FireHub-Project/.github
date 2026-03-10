@@ -1,0 +1,66 @@
+name: Code Coverage
+
+on:
+  workflow_call:
+    inputs:
+      phpVersion:
+        type: string
+        required: true
+      phpExtensions:
+        type: string
+        required: true
+      tools:
+        type: string
+        required: true
+    secrets:
+      GH_TOKEN:
+        required: true
+      CODECOV_TOKEN:
+        required: true
+
+jobs:
+  run:
+    name: Code Coverage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ inputs.phpVersion }}
+          extensions: ${{ inputs.phpExtensions }}
+          tools: ${{ inputs.tools }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Install composer dependencies
+        run: composer install --no-interaction --no-progress --prefer-dist
+      - name: Run PHPUnit unit tests with coverage and test results
+        run: phpunit --testsuite unit --coverage-clover=coverage-unit.xml --log-junit junit.xml
+      - name: Upload unit coverage to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          files: ./coverage-unit.xml
+          flags: unit
+          token: ${{ secrets.CODECOV_TOKEN }}
+      - name: Run PHPUnit integration tests with coverage and test results
+        run: phpunit --testsuite integration --coverage-clover=coverage-integration.xml --log-junit junit.xml
+      - name: Upload integration coverage to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          files: ./coverage-integration.xml
+          flags: integration
+          token: ${{ secrets.CODECOV_TOKEN }}
+      - name: Run PHPUnit smoke tests with coverage and test results
+        run: phpunit --testsuite smoke --coverage-clover=coverage-smoke.xml --log-junit junit.xml
+      - name: Upload smoke coverage to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          files: ./coverage-smoke.xml
+          flags: smoke
+          token: ${{ secrets.CODECOV_TOKEN }}
+      - name: Upload test results to Codecov
+        if: ${{ !cancelled() }}
+        uses: codecov/test-results-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
