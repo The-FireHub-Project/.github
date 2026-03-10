@@ -22,10 +22,6 @@ on:
       command:
         type: string
         required: true
-      uploadArtifacts:
-        type: boolean
-        required: false
-        default: false
     secrets:
       GH_TOKEN:
         required: true
@@ -48,16 +44,9 @@ jobs:
           php-version: ${{ matrix.php-versions }}
           extensions: ${{ inputs.phpExtensions }}
           tools: ${{ inputs.tools }}
-          coverage: xdebug
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: Install composer dependencies
         run: composer install --no-interaction --no-progress --prefer-dist
       - name: ${{ inputs.title }}
         run: ${{ inputs.command }}
-      - name: Upload PHPUnit artifacts
-        if: ${{ inputs.uploadArtifacts }}
-        uses: actions/upload-artifact@v7
-        with:
-          name: artifact-${{ matrix.operating-system }}-${{ matrix.php-versions }}
-          path: '*.xml'
