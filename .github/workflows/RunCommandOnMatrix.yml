@@ -49,6 +49,9 @@ jobs:
       - name: Install composer dependencies
         run: composer install --no-interaction --no-progress --prefer-dist
       - name: ${{ inputs.title }}
-        run: ${{ inputs.command }}
+        run: |
+          COMMAND="${COMMAND//MATRIX_OS/${{ matrix.operating-system }}}"
+          echo "Running: $CMD"
+          $CMD
         env:
           MATRIX_OS: ${{ matrix.operating-system }}
