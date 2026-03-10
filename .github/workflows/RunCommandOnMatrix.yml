@@ -22,6 +22,10 @@ on:
       command:
         type: string
         required: true
+      uploadArtifacts:
+        type: boolean
+        required: false
+        default: false
     secrets:
       GH_TOKEN:
         required: true
@@ -51,3 +55,8 @@ jobs:
         run: composer install --no-interaction --no-progress --prefer-dist
       - name: ${{ inputs.title }}
         run: ${{ inputs.command }}
+      - name: Upload PHPUnit artifacts
+        if: ${{ inputs.uploadArtifacts }}
+        uses: actions/upload-artifact@v7
+        with:
+          path: '*.xml'
