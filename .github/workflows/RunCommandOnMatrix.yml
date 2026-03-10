@@ -59,4 +59,5 @@ jobs:
         if: ${{ inputs.uploadArtifacts }}
         uses: actions/upload-artifact@v7
         with:
+          name: artifact-${{ matrix.operating-system }}-${{ matrix.php-versions }}
           path: '*.xml'
