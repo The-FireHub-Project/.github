@@ -1,0 +1,89 @@
+name: ♻️ Refactor
+description: Requests for code refactoring or restructuring without changing functionality
+type: Refactor
+
+body:
+
+  - type: input
+    id: version
+    attributes:
+      label: "Affected Version"
+      description: Enter the version of this repository where refactoring applies.
+      placeholder: "e.g. v1.2.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: refactor-area
+    attributes:
+      label: "Refactor Area"
+      description: Select the part of the system being refactored.
+      options:
+        - Architecture
+        - Module Structure
+        - Code Style / Clean Code
+        - Dependency Structure
+        - Naming / Abstractions
+        - Design Patterns
+        - File / Folder Structure
+        - API Structure
+        - Other
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: precheck
+    attributes:
+      label: "Pre-check"
+      description: Please confirm before submitting
+      options:
+        - label: I confirm this does NOT change functionality (behavior must remain identical)
+          required: true
+
+  - type: textarea
+    id: current-state
+    attributes:
+      label: "Current State"
+      description: Describe the current implementation or structure.
+    validations:
+      required: true
+
+  - type: textarea
+    id: refactor-goal
+    attributes:
+      label: "Refactor Goal"
+      description: What should be improved structurally?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: "Reason for Refactor"
+      description: Why is this refactor needed? (maintainability, readability, scalability, etc.)
+    validations:
+      required: true
+
+  - type: textarea
+    id: approach
+    attributes:
+      label: "Approach"
+      description: How will the refactor be done?
+    validations:
+      required: false
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: "Risks"
+      description: Any potential risks or regression concerns (should be minimal by definition).
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: "Additional Context"
+      description: Diagrams, examples, or references.
+    validations:
+      required: false

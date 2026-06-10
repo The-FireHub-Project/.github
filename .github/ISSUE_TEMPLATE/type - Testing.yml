@@ -1,0 +1,98 @@
+name: 🧪 Testing
+description: Tasks related to testing the application, features, or updates
+type: Testing
+
+body:
+
+  - type: input
+    id: version
+    attributes:
+      label: "Affected Version"
+      description: Enter the version of this repository being tested.
+      placeholder: "e.g. v1.2.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: testing-type
+    attributes:
+      label: "Testing Type"
+      description: Select the type of testing task.
+      options:
+        - Unit Testing
+        - Integration Testing
+        - End-to-End Testing
+        - Regression Testing
+        - Performance Testing
+        - Security Testing
+        - Manual Testing
+        - Test Automation
+        - CI/CD Validation
+        - Other
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: precheck
+    attributes:
+      label: "Pre-check"
+      description: Please confirm before submitting
+      options:
+        - label: I have checked existing tests and testing tasks
+          required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: "Scope"
+      description: What is being tested (features, modules, endpoints, etc.)?
+    validations:
+      required: true
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: "Testing Objective"
+      description: What are we trying to verify or validate?
+    validations:
+      required: true
+
+  - type: textarea
+    id: test-cases
+    attributes:
+      label: "Test Cases"
+      description: List test scenarios or cases to be executed.
+    validations:
+      required: true
+
+  - type: textarea
+    id: setup
+    attributes:
+      label: "Test Setup"
+      description: Environment, configuration, or prerequisites needed for testing.
+    validations:
+      required: false
+
+  - type: textarea
+    id: results
+    attributes:
+      label: "Expected / Actual Results"
+      description: Document expected vs actual behavior (if applicable).
+    validations:
+      required: false
+
+  - type: textarea
+    id: automation
+    attributes:
+      label: "Automation (if applicable)"
+      description: Notes about automated tests, scripts, or CI integration.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: "Additional Context"
+      description: Logs, screenshots, reports, or references.
+    validations:
+      required: false

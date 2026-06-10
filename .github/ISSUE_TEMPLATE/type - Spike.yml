@@ -1,0 +1,96 @@
+name: 🔍 Spike
+description: Research or exploration tasks to investigate solutions or gather information before development
+type: Spike
+
+body:
+
+  - type: input
+    id: version
+    attributes:
+      label: "Affected Version"
+      description: Enter the version this spike relates to (if applicable).
+      placeholder: "e.g. v1.2.0"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: spike-type
+    attributes:
+      label: "Spike Type"
+      description: Select the focus of this investigation.
+      options:
+        - Technical Research
+        - Architecture Evaluation
+        - Proof of Concept
+        - Performance Investigation
+        - Library / Tool Evaluation
+        - Feasibility Study
+        - Integration Analysis
+        - Other
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: precheck
+    attributes:
+      label: "Pre-check"
+      description: Please confirm before submitting
+      options:
+        - label: This is exploratory work and not a production change
+          required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: "Research Question"
+      description: What exactly are we trying to find out?
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "Context"
+      description: Why is this investigation needed?
+    validations:
+      required: true
+
+  - type: textarea
+    id: approach
+    attributes:
+      label: "Approach"
+      description: How will the investigation be performed? (tests, benchmarks, comparisons, etc.)
+    validations:
+      required: true
+
+  - type: textarea
+    id: findings
+    attributes:
+      label: "Findings"
+      description: Results, observations, or data gathered during the spike.
+    validations:
+      required: false
+
+  - type: textarea
+    id: conclusion
+    attributes:
+      label: "Conclusion / Recommendation"
+      description: Final decision or recommendation based on findings.
+    validations:
+      required: false
+
+  - type: textarea
+    id: next-steps
+    attributes:
+      label: "Next Steps"
+      description: What should happen after this spike (feature, refactor, discard, etc.)?
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: "Additional Context"
+      description: Links, code snippets, benchmarks, or references.
+    validations:
+      required: false

@@ -1,0 +1,105 @@
+name: 🧪 Experiment
+description: Experimental work or proofs-of-concept that may not go into production
+type: Experiment
+
+body:
+
+  - type: input
+    id: version
+    attributes:
+      label: "Affected Version"
+      description: Enter the version this experiment relates to (if applicable).
+      placeholder: "e.g. v1.2.0"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: experiment-type
+    attributes:
+      label: "Experiment Type"
+      description: Select the nature of this experiment.
+      options:
+        - Proof of Concept (PoC)
+        - Prototype
+        - Architecture Experiment
+        - Performance Experiment
+        - Library / Tool Test
+        - Feature Prototype
+        - Integration Experiment
+        - UI/UX Experiment
+        - Other
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: precheck
+    attributes:
+      label: "Pre-check"
+      description: Please confirm before submitting
+      options:
+        - label: This is experimental work and may not be production-ready
+          required: true
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: "Goal"
+      description: What are we trying to validate or test?
+    validations:
+      required: true
+
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: "Hypothesis"
+      description: What do we expect to happen or prove?
+    validations:
+      required: true
+
+  - type: textarea
+    id: approach
+    attributes:
+      label: "Approach"
+      description: How is the experiment implemented or tested?
+    validations:
+      required: true
+
+  - type: textarea
+    id: results
+    attributes:
+      label: "Results"
+      description: Observations, outcomes, measurements, or logs.
+    validations:
+      required: false
+
+  - type: textarea
+    id: conclusion
+    attributes:
+      label: "Conclusion"
+      description: Should this move to production, be discarded, or refined?
+    validations:
+      required: false
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: "Risks / Limitations"
+      description: What are the known limitations or risks of this experiment?
+    validations:
+      required: false
+
+  - type: textarea
+    id: next-steps
+    attributes:
+      label: "Next Steps"
+      description: What happens after this experiment?
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: "Additional Context"
+      description: Code snippets, references, benchmarks, or diagrams.
+    validations:
+      required: false

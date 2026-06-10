@@ -1,0 +1,71 @@
+name: 💡 Enhancement
+description: Requests to improve or enhance existing features or functionality
+type: Enhancement
+
+body:
+
+  - type: input
+    id: version
+    attributes:
+      label: "Affected Version"
+      description: Enter the version of this repository where the enhancement applies.
+      placeholder: "e.g. v1.2.0"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: precheck
+    attributes:
+      label: "Pre-check"
+      description: Please confirm before submitting
+      options:
+        - label: I have searched existing issues and enhancement requests
+          required: true
+
+  - type: textarea
+    id: current-behavior
+    attributes:
+      label: "Current Behavior"
+      description: Describe how the feature currently works.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-improvement
+    attributes:
+      label: "Proposed Improvement"
+      description: What should be improved or added?
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: "Use Case / Motivation"
+      description: Why is this enhancement needed? What problem does it solve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation-ideas
+    attributes:
+      label: "Implementation Ideas"
+      description: Optional technical suggestions or approaches.
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Alternatives Considered"
+      description: Other ways to solve the same problem.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: "Additional Context"
+      description: Screenshots, examples, references, or related discussions.
+    validations:
+      required: false

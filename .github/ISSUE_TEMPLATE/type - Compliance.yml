@@ -1,0 +1,105 @@
+name: 📋 Compliance
+description: Issues related to regulatory requirements, standards, policies, licensing, or internal governance
+type: Compliance
+
+body:
+
+  - type: input
+    id: version
+    attributes:
+      label: "Affected Version"
+      description: Enter the version where compliance requirement applies (if applicable).
+      placeholder: "e.g. v1.2.0"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: compliance-type
+    attributes:
+      label: "Compliance Type"
+      description: Select the type of compliance requirement.
+      options:
+        - Legal / Regulatory Requirement
+        - Internal Policy
+        - Security Standard (ISO, SOC2, etc.)
+        - Data Protection (GDPR, etc.)
+        - Licensing Requirement
+        - Audit Finding
+        - Governance Rule
+        - Accessibility Standard (WCAG overlap allowed here too)
+        - Other
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: precheck
+    attributes:
+      label: "Pre-check"
+      description: Please confirm before submitting
+      options:
+        - label: This issue relates to compliance and not a general feature or bug
+          required: true
+
+  - type: textarea
+    id: requirement
+    attributes:
+      label: "Compliance Requirement"
+      description: What rule, standard, or regulation must be satisfied?
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: "Impact Assessment"
+      description: What parts of the system are affected by this requirement?
+    validations:
+      required: true
+
+  - type: textarea
+    id: gap
+    attributes:
+      label: "Current Gap"
+      description: What is currently missing or non-compliant?
+    validations:
+      required: true
+
+  - type: textarea
+    id: required-changes
+    attributes:
+      label: "Required Changes"
+      description: What must be implemented or modified to achieve compliance?
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: "Risks / Constraints"
+      description: Legal, operational, or technical risks of non-compliance or implementation.
+    validations:
+      required: false
+
+  - type: textarea
+    id: audit-notes
+    attributes:
+      label: "Audit / Verification Notes"
+      description: How compliance will be verified or audited.
+    validations:
+      required: false
+
+  - type: textarea
+    id: references
+    attributes:
+      label: "References"
+      description: Links to regulations, policies, standards, or internal docs.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: "Additional Context"
+      description: Any extra notes, legal considerations, or governance details.
+    validations:
+      required: false

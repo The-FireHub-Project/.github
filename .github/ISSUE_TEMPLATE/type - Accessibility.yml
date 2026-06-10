@@ -1,0 +1,102 @@
+name: ♿ Accessibility
+description: Issues related to making the application accessible
+type: Accessibility
+
+body:
+
+  - type: input
+    id: version
+    attributes:
+      label: "Affected Version"
+      description: Enter the version where the accessibility issue is observed.
+      placeholder: "e.g. v1.2.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: accessibility-area
+    attributes:
+      label: "Accessibility Area"
+      description: Select the area affected.
+      options:
+        - Keyboard Navigation
+        - Screen Reader Support
+        - Color Contrast
+        - Focus Management
+        - ARIA / Semantic HTML
+        - Forms & Inputs
+        - Media (Audio/Video)
+        - Responsive / Zoom Behavior
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: wcag-level
+    attributes:
+      label: "WCAG Level (if known)"
+      description: Select the applicable WCAG compliance level.
+      options:
+        - Not Assessed
+        - A
+        - AA
+        - AAA
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: precheck
+    attributes:
+      label: "Pre-check"
+      description: Please confirm before submitting
+      options:
+        - label: I have verified this is an accessibility issue and not a general bug
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Problem Description"
+      description: Describe the accessibility issue clearly.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Expected Accessibility Behavior"
+      description: What should happen for accessible usage?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Steps to Reproduce"
+      description: Steps to reproduce the accessibility issue (if applicable).
+    validations:
+      required: false
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: "Impact"
+      description: Who is affected and how (users, assistive tech, etc.)?
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestions
+    attributes:
+      label: "Suggestions / Fix Ideas"
+      description: Optional improvement ideas or proposed fixes.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: "Additional Context"
+      description: Screenshots, accessibility reports, audits, or references.
+    validations:
+      required: false

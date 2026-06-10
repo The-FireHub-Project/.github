@@ -1,0 +1,80 @@
+name: 🆘 Support
+description: Requests for help, guidance, or assistance from the team
+type: Support
+
+body:
+
+  - type: input
+    id: version
+    attributes:
+      label: "Affected Version"
+      description: Enter the version of this repository where the issue occurs (if applicable).
+      placeholder: "e.g. v1.2.0"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: support-area
+    attributes:
+      label: "Support Area"
+      description: Select the area where help is needed.
+      options:
+        - Setup / Installation
+        - Configuration
+        - Usage / API
+        - Architecture / Design Guidance
+        - Debugging Help
+        - Migration / Upgrade
+        - Best Practices
+        - Other
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: precheck
+    attributes:
+      label: "Pre-check"
+      description: Please confirm before submitting
+      options:
+        - label: I have searched existing issues and documentation
+          required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: "Question / Request"
+      description: Describe what you need help with.
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "Context"
+      description: Provide background information (setup, environment, what you tried, etc.).
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-guidance
+    attributes:
+      label: "Expected Guidance"
+      description: What kind of help or outcome are you expecting?
+    validations:
+      required: false
+
+  - type: textarea
+    id: attempts
+    attributes:
+      label: "What You Have Tried"
+      description: Steps already taken to solve the issue.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: "Additional Context"
+      description: Logs, screenshots, examples, or references.
+    validations:
+      required: false

@@ -1,0 +1,42 @@
+blank_issues_enabled: false
+contact_links:
+
+  # Governance Broadcast
+  - name: 📢 Announcements
+    url: https://github.com/orgs/The-FireHub-Project/discussions/categories/announcements
+    about: Official organizational announcements, release notices, scheduled maintenance, governance decisions, and important updates published by maintainers or administrators.
+  - name: 📰 News
+    url: https://github.com/orgs/The-FireHub-Project/discussions/categories/news
+    about: Community news, ecosystem updates, project highlights, and general informational posts related to FireHub projects and initiatives.
+
+  # Community Input
+  - name: ❓ Q&A
+    url: https://github.com/orgs/The-FireHub-Project/discussions/categories/q-a
+    about: Ask questions, seek technical guidance, clarify implementation details, or get help from the FireHub community and maintainers.
+  - name: ⁉️ Suggestions
+    url: https://github.com/orgs/The-FireHub-Project/discussions/categories/suggestions
+    about: Submit actionable suggestions for improvements, optimizations, refactoring, usability enhancements, developer experience, or security-related changes.
+  - name: 🎈Ideas
+    url: https://github.com/orgs/The-FireHub-Project/discussions/categories/ideas
+    about: Share new concepts, feature ideas, architectural directions, or creative proposals for improving the FireHub ecosystem.
+
+  # Technical Design
+  - name: ♨️ RFC
+    url: https://github.com/orgs/The-FireHub-Project/discussions/categories/rfc
+    about: Request for Comments on architectural decisions, technical standards, experimental features, breaking changes, or major implementation proposals.
+
+  # Operations
+  - name: ❗ Incident
+    url: https://github.com/orgs/The-FireHub-Project/discussions/categories/incident
+    about: Report operational incidents, bugs, regressions, outages, unexpected behavior, or other issues affecting FireHub projects or infrastructure.
+  - name: 🛠 Maintenance
+    url: https://github.com/orgs/The-FireHub-Project/discussions/categories/maintenance
+    about: Communicate planned maintenance, infrastructure work, service interruptions, upgrades, migrations, or operational changes affecting the ecosystem.
+
+  # Security
+  - name: 🔏 Vulnerabilities
+    url: https://github.com/orgs/The-FireHub-Project/discussions/categories/vulnerabilities
+    about: Report, discuss, and coordinate security vulnerabilities, dependency risks, exploit scenarios, hardening measures, and responsible disclosure processes related to FireHub projects.
+  - name: 🛡️ Security Advisories
+    url: https://github.com/orgs/The-FireHub-Project/discussions/categories/security-advisories
+    about: Official security notices, mitigation guidance, patched vulnerabilities, exposure assessments, and security-related announcements published by maintainers.

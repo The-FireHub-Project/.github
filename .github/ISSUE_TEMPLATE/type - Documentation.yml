@@ -1,0 +1,56 @@
+name: 📑 Documentation
+description: Issues related to project documentation, guides, or instructions
+type: Documentation
+
+body:
+
+  - type: input
+    id: version
+    attributes:
+      label: "Affected Version"
+      description: Enter the version of this repository where the documentation issue exists.
+      placeholder: "e.g. v1.2.0"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: precheck
+    attributes:
+      label: "Pre-check"
+      description: Please confirm before submitting
+      options:
+        - label: I have searched existing documentation issues
+          required: true
+
+  - type: textarea
+    id: documentation-area
+    attributes:
+      label: "Documentation Area"
+      description: Which part of the documentation is affected?
+      placeholder: "e.g. API docs, installation guide, architecture docs, README"
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: "Issue Description"
+      description: Describe what is wrong, missing, or unclear in the documentation.
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested-change
+    attributes:
+      label: "Suggested Improvement"
+      description: How should the documentation be improved or corrected?
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: "Additional Context"
+      description: Provide examples, screenshots, links, or references if available.
+    validations:
+      required: false

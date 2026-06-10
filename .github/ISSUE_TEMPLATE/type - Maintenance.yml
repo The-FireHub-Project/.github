@@ -1,0 +1,81 @@
+name: 🛠️ Maintenance
+description: Internal maintenance work for keeping the project or infrastructure in good shape
+type: Maintenance
+
+body:
+
+  - type: input
+    id: version
+    attributes:
+      label: "Affected Version"
+      description: Enter the version of this repository where maintenance work is applied (if relevant).
+      placeholder: "e.g. v1.2.0"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: maintenance-type
+    attributes:
+      label: "Maintenance Type"
+      description: Select the type of maintenance work being performed.
+      options:
+        - Dependency Update
+        - Code Cleanup
+        - Refactoring
+        - Performance Improvement
+        - Security Patch
+        - Infrastructure Update
+        - Documentation Maintenance
+        - CI/CD Maintenance
+        - Other
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: precheck
+    attributes:
+      label: "Pre-check"
+      description: Please confirm before submitting
+      options:
+        - label: I have reviewed existing maintenance tasks
+          required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: Describe what maintenance work is being done and why.
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: "Scope"
+      description: Which parts of the system are affected by this maintenance?
+    validations:
+      required: true
+
+  - type: textarea
+    id: changes
+    attributes:
+      label: "Changes"
+      description: List the key changes introduced.
+    validations:
+      required: true
+
+  - type: textarea
+    id: risk
+    attributes:
+      label: "Risk / Impact"
+      description: Any potential risk or side effects introduced by this maintenance.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: "Additional Context"
+      description: Logs, references, or other useful information.
+    validations:
+      required: false
