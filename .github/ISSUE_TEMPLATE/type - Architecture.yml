@@ -1,0 +1,97 @@
+name: 🧱 Architecture
+description: System design decisions, core framework structure, and definitive architectural contracts for FireHub ecosystem
+type: Architecture
+
+body:
+
+  - type: input
+    id: version
+    attributes:
+      label: "Affected Version"
+      description: Enter the version of this repository relevant to the architectural decision (if applicable).
+      placeholder: "e.g. v1.2.0"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: precheck
+    attributes:
+      label: "Pre-check"
+      description: Please confirm before submitting
+      options:
+        - label: I understand this is a final or near-final architectural decision, not an open discussion
+          required: true
+        - label: I have reviewed existing architecture decisions, RFCs, and related issues
+          required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "Context"
+      description: What part of the system is being designed or defined?
+    validations:
+      required: true
+
+  - type: textarea
+    id: decision
+    attributes:
+      label: "Architectural Decision"
+      description: Clearly describe the final architecture, structure, or system rule being defined.
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: "Rationale"
+      description: Why is this architecture chosen? What are the key reasons behind this decision?
+    validations:
+      required: true
+
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: "System Boundaries"
+      description: Define what is INCLUDED and what is EXCLUDED in this architectural decision (very important for Core vs Runtime separation).
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Rejected Alternatives"
+      description: What other architectures were considered and why were they rejected?
+    validations:
+      required: false
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: "Impact Analysis"
+      description: Effects on Core, Runtime, Adapters, Capabilities, backwards compatibility, and future extensions.
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation-guidelines
+    attributes:
+      label: "Implementation Guidelines"
+      description: High-level rules or constraints for developers implementing this architecture.
+    validations:
+      required: false
+
+  - type: textarea
+    id: follow-up
+    attributes:
+      label: "Follow-up Work"
+      description: What Feature or Refactor issues will be created as a result of this decision?
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: "Additional Context"
+      description: Links, diagrams, references, or supporting materials.
+    validations:
+      required: false
