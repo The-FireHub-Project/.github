@@ -1,4 +1,4 @@
-# 🧱 Architecture Pull Request
+# 🧱 System Design / Architecture Pull Request
 
 ## Related Issue
 - Link the issue(s) this PR addresses:

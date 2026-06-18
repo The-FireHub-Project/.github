@@ -14,6 +14,7 @@ Before proceeding, select the appropriate PR type for this change:
 - 🪛 Generic / Task → General work not fitting other categories → [Generic_Tasks.md](?template=Generic_Tasks.md)
 - 🔖 Release → Release preparation → [Release.md](?template=Release.md)
 - 🔐 Security / Vulnerability → Security fixes or improvements → [Security_Vulnerability.md](?template=Security_Vulnerability.md)
+- 🧱 System Design / Architecture → Enforces core system architecture → [System_Design_Architecture.md](?template=System_Design_Architecture.md)
 
 ## 📌 How to Use PR Templates
 
