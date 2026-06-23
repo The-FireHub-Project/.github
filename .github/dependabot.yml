@@ -9,8 +9,6 @@ updates:
     commit-message:
       prefix: "ci"
       include: "scope"
-    assignees:
-      - CI/CD Maintainers
     reviewers:
       - Maintainers
     labels:
