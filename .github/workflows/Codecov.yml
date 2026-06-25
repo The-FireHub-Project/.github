@@ -12,6 +12,9 @@ on:
       tools:
         type: string
         required: true
+      suites:
+        type: string
+        required: true
     secrets:
       GH_TOKEN:
         required: true
@@ -20,8 +23,12 @@ on:
 
 jobs:
   run:
-    name: Code Coverage
+    name: Code Coverage (${{ matrix.suite }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        suite: ${{ fromJSON(format('["{0}"]', replace(inputs.suites, ',', '","'))) }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -37,57 +44,24 @@ jobs:
         run: composer install --no-interaction --no-progress --prefer-dist
 
       # -------------------------
-      # UNIT TESTS
+      # RUN TESTS PER SUITE
       # -------------------------
-      - name: Run Unit Tests
+      - name: Run PHPUnit (${{ matrix.suite }})
         run: |
           phpunit \
-            --testsuite unit \
-            --coverage-clover=coverage-unit.xml \
-            --log-junit junit-unit.xml
+            --testsuite ${{ matrix.suite }} \
+            --coverage-clover=coverage-${{ matrix.suite }}.xml \
+            --log-junit junit-${{ matrix.suite }}.xml
 
+      # -------------------------
+      # Upload to Codecov
+      # -------------------------
       - name: Upload Unit Coverage
         uses: codecov/codecov-action@v7
         with:
-          files: ./coverage-unit.xml
-          flags: unit
-          name: unit-tests
-          token: ${{ secrets.CODECOV_TOKEN }}
-
-      # -------------------------
-      # INTEGRATION TESTS
-      # -------------------------
-      - name: Run Integration Tests
-        run: |
-          phpunit \
-            --testsuite integration \
-            --coverage-clover=coverage-integration.xml \
-            --log-junit junit-integration.xml
-
-      - name: Upload Integration Coverage
-        uses: codecov/codecov-action@v7
-        with:
-          files: ./coverage-integration.xml
-          flags: integration
-          name: integration-tests
-          token: ${{ secrets.CODECOV_TOKEN }}
-
-      # -------------------------
-      # SMOKE TESTS
-      # -------------------------
-      - name: Run Smoke Tests
-        run: |
-          phpunit \
-            --testsuite smoke \
-            --coverage-clover=coverage-smoke.xml \
-            --log-junit junit-smoke.xml
-
-      - name: Upload Smoke Coverage
-        uses: codecov/codecov-action@v7
-        with:
-          files: ./coverage-smoke.xml
-          flags: smoke
-          name: smoke-tests
+          files: ./coverage-${{ matrix.suite }}.xml
+          flags: ${{ matrix.suite }}
+          name: ${{ matrix.suite }}-tests
           token: ${{ secrets.CODECOV_TOKEN }}
 
       # -------------------------
