@@ -35,30 +35,64 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: Install composer dependencies
         run: composer install --no-interaction --no-progress --prefer-dist
-      - name: Run PHPUnit unit tests with coverage and test results
-        run: phpunit --testsuite unit --coverage-clover=coverage-unit.xml --log-junit junit.xml
-      - name: Upload unit coverage to Codecov
+
+      # -------------------------
+      # UNIT TESTS
+      # -------------------------
+      - name: Run Unit Tests
+        run: |
+          phpunit \
+            --testsuite unit \
+            --coverage-clover=coverage-unit.xml \
+            --log-junit junit-unit.xml
+
+      - name: Upload Unit Coverage
         uses: codecov/codecov-action@v7
         with:
           files: ./coverage-unit.xml
           flags: unit
+          name: unit-tests
           token: ${{ secrets.CODECOV_TOKEN }}
-      - name: Run PHPUnit integration tests with coverage and test results
-        run: phpunit --testsuite integration --coverage-clover=coverage-integration.xml --log-junit junit.xml
-      - name: Upload integration coverage to Codecov
+
+      # -------------------------
+      # INTEGRATION TESTS
+      # -------------------------
+      - name: Run Integration Tests
+        run: |
+          phpunit \
+            --testsuite integration \
+            --coverage-clover=coverage-integration.xml \
+            --log-junit junit-integration.xml
+
+      - name: Upload Integration Coverage
         uses: codecov/codecov-action@v7
         with:
           files: ./coverage-integration.xml
           flags: integration
+          name: integration-tests
           token: ${{ secrets.CODECOV_TOKEN }}
-      - name: Run PHPUnit smoke tests with coverage and test results
-        run: phpunit --testsuite smoke --coverage-clover=coverage-smoke.xml --log-junit junit.xml
-      - name: Upload smoke coverage to Codecov
+
+      # -------------------------
+      # SMOKE TESTS
+      # -------------------------
+      - name: Run Smoke Tests
+        run: |
+          phpunit \
+            --testsuite smoke \
+            --coverage-clover=coverage-smoke.xml \
+            --log-junit junit-smoke.xml
+
+      - name: Upload Smoke Coverage
         uses: codecov/codecov-action@v7
         with:
           files: ./coverage-smoke.xml
           flags: smoke
+          name: smoke-tests
           token: ${{ secrets.CODECOV_TOKEN }}
+
+      # -------------------------
+      # TEST RESULTS (ALL)
+      # -------------------------
       - name: Upload test results to Codecov
         if: ${{ !cancelled() }}
         uses: codecov/test-results-action@v1
