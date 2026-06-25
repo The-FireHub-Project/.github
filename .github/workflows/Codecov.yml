@@ -58,7 +58,7 @@ jobs:
             --log-junit junit-${{ matrix.suite }}.xml
 
       # -------------------------
-      # Upload to Codecov
+      # UPLOAD TO CODECOV
       # -------------------------
       - name: Upload Unit Coverage
         uses: codecov/codecov-action@v7
