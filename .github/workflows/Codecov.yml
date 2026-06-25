@@ -28,8 +28,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        suite: ${{ fromJSON(format('["{0}"]', replace(inputs.suites, ',', '","'))) }}
+        suite: ${{ fromJson(inputs.suites) }}
     steps:
+
+      # -------------------------
+      # CHECKOUT & INSTALL
+      # -------------------------
       - name: Checkout
         uses: actions/checkout@v7
       - name: Install PHP

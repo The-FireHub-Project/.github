@@ -36,6 +36,10 @@ jobs:
         php-versions: ${{ fromJson(inputs.phpVersions) }}
     name: ${{ inputs.title }} with PHP ${{ matrix.php-versions }} on ${{ matrix.operating-system }}
     steps:
+
+      # -------------------------
+      # CHECKOUT & INSTALL
+      # -------------------------
       - name: Checkout
         uses: actions/checkout@v7
       - name: Install PHP
