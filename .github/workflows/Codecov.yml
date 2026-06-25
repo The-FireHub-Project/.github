@@ -67,12 +67,3 @@ jobs:
           flags: ${{ matrix.suite }}
           name: ${{ matrix.suite }}-tests
           token: ${{ secrets.CODECOV_TOKEN }}
-
-      # -------------------------
-      # TEST RESULTS (ALL)
-      # -------------------------
-      - name: Upload test results to Codecov
-        if: ${{ !cancelled() }}
-        uses: codecov/test-results-action@v1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
