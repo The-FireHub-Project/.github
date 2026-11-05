@@ -10,12 +10,6 @@ on:
         type: string
         required: false
         default: '["ubuntu-latest", "windows-latest", "macOS-latest"]'
-      phpVersions:
-        type: string
-        required: true
-      phpExtensions:
-        type: string
-        required: true
       tools:
         type: string
         required: true
@@ -27,14 +21,12 @@ on:
         required: true
 
 jobs:
-  run:
-    runs-on: ${{ matrix.operating-system }}
-    strategy:
-      fail-fast: false
-      matrix:
-        operating-system: ${{ fromJson(inputs.operatingSystems) }}
-        php-versions: ${{ fromJson(inputs.phpVersions) }}
-    name: ${{ inputs.title }} with PHP ${{ matrix.php-versions }} on ${{ matrix.operating-system }}
+  prepare:
+    name: Prepare PHP Configuration
+    runs-on: ubuntu-latest
+    outputs:
+      phpVersions: ${{ steps.configuration.outputs.versions }}
+      phpExtensions: ${{ steps.configuration.outputs.extensions }}
     steps:
 
       # -------------------------
@@ -42,15 +34,63 @@ jobs:
       # -------------------------
       - name: Checkout
         uses: actions/checkout@v7
-      - name: Install PHP
+      - name: Read PHP Configuration
+        id: configuration
+        shell: bash
+        run: |
+          versions=$(jq -ce '
+            .extra.firehub.ci["php-versions"]
+            | select(
+                type == "array"
+                and length > 0
+                and all(.[]; type == "string" and test("^[0-9]+\\.[0-9]+$"))
+              )
+          ' composer.json) || {
+            echo "::error::Invalid or missing PHP versions in composer.json"
+            exit 1
+          }
+
+          extensions=$(jq -r '
+            .require
+            | keys
+            | map(select(startswith("ext-")))
+            | map(ltrimstr("ext-"))
+            | join(", ")
+          ' composer.json) || {
+            echo "::error::Unable to read PHP extensions from composer.json"
+            exit 1
+          }
+
+          echo "versions=$versions" >> "$GITHUB_OUTPUT"
+          echo "extensions=$extensions" >> "$GITHUB_OUTPUT"
+  run:
+    name: ${{ inputs.title }} - PHP ${{ matrix.php }} - ${{ matrix.os }}
+    needs: prepare
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ${{ fromJSON(inputs.operatingSystems) }}
+        php: ${{ fromJSON(needs.prepare.outputs.phpVersions) }}
+    steps:
+
+      # -------------------------
+      # CHECKOUT & INSTALL
+      # -------------------------
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php-versions }}
-          extensions: ${{ inputs.phpExtensions }}
+          php-version: ${{ matrix.php }}
+          extensions: ${{ needs.prepare.outputs.phpExtensions }}
           tools: ${{ inputs.tools }}
+          coverage: none
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      - name: Install composer dependencies
+      - name: Install Dependencies
         run: composer install --no-interaction --no-progress --prefer-dist
+      - name: Validate Platform Requirements
+        run: composer check-platform-reqs
       - name: ${{ inputs.title }}
         run: ${{ inputs.command }}
