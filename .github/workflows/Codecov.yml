@@ -3,32 +3,75 @@ name: Code Coverage
 on:
   workflow_call:
     inputs:
-      phpVersion:
-        type: string
-        required: true
-      phpExtensions:
-        type: string
-        required: true
       tools:
         type: string
-        required: true
+        required: false
+        default: "composer:v2, phpunit"
       suites:
         type: string
         required: true
     secrets:
       GH_TOKEN:
-        required: true
+        required: false
       CODECOV_TOKEN:
         required: true
 
 jobs:
-  run:
-    name: Code Coverage (${{ matrix.suite }})
+  prepare:
+    name: Prepare PHP Configuration
     runs-on: ubuntu-latest
+    outputs:
+      phpVersion: ${{ steps.configuration.outputs.version }}
+      phpExtensions: ${{ steps.configuration.outputs.extensions }}
+    steps:
+
+      # -------------------------
+      # CHECKOUT & INSTALL
+      # -------------------------
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Read PHP Configuration
+        id: configuration
+        shell: bash
+        run: |
+          version=$(jq -er '
+            .extra.firehub.ci["php-versions"]
+            | select(
+                type == "array"
+                and length > 0
+                and all(.[]; type == "string" and test("^[0-9]+\\.[0-9]+$"))
+              )
+            | sort_by(split(".") | map(tonumber))
+            | last
+          ' composer.json) || {
+            echo "::error::Invalid or missing PHP versions in composer.json"
+            exit 1
+          }
+
+          extensions=$(jq -r '
+            (.require // {})
+            | keys
+            | map(select(startswith("ext-")))
+            | map(ltrimstr("ext-"))
+            | join(", ")
+          ' composer.json) || {
+            echo "::error::Unable to read PHP extensions from composer.json"
+            exit 1
+          }
+
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "extensions=$extensions" >> "$GITHUB_OUTPUT"
+
+  run:
+    name: Code Coverage (${{ matrix.suite }}) - PHP ${{ needs.prepare.outputs.phpVersion }}
+    needs: prepare
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
     strategy:
       fail-fast: false
       matrix:
-        suite: ${{ fromJson(inputs.suites) }}
+        suite: ${{ fromJSON(inputs.suites) }}
     steps:
 
       # -------------------------
@@ -39,13 +82,16 @@ jobs:
       - name: Install PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ inputs.phpVersion }}
-          extensions: ${{ inputs.phpExtensions }}
+          php-version: ${{ needs.prepare.outputs.phpVersion }}
+          extensions: ${{ needs.prepare.outputs.phpExtensions }}
           tools: ${{ inputs.tools }}
+          coverage: xdebug
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      - name: Install composer dependencies
+      - name: Install Composer Dependencies
         run: composer install --no-interaction --no-progress --prefer-dist
+      - name: Validate Platform Requirements
+        run: composer check-platform-reqs
 
       # -------------------------
       # RUN TESTS PER SUITE
